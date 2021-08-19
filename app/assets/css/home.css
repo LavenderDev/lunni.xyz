@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+     --main: #2A282D; 
+     --dark: #211F23;
+     --light: #343238;
+}
+
+
+* {
+     margin: 0;
+     padding: 0;
+     font-family: 'Poppins', sans-serif;
+     user-select: none;
+     box-sizing: border-box;
+}
+
+body {
+     background: var(--main);
+     overflow: hidden;
+}
+
+.logout-btn {
+     margin-top: 100px;
+     display: block;
+     text-decoration: none;
+     background-color: var(--dark);
+     color: #b0b3b8;
+     padding: 15px;
+     margin: 10px;
+     border-radius: 5px;
+     font-size: 20px;
+     font-weight: 500;
+     
+}
+
+
+.navbar {
+     display: flex;
+     justify-content: space-evenly;
+}
+
+.navbranding {
+     margin-top: 17px;
+}
+.navbranding h1 {
+     color: white;
+}
+nav {
+     position: absolute;
+     margin-top: 17px;
+     margin-left: 500px;
+}
+nav .drop-btn {
+     width: 400px;
+     background-color: var(--dark);
+     color: #b0b3b8;
+     line-height: 50px;
+     padding: 0 20px;
+     border-radius: 5px;
+     font-size: 20px;
+     font-weight: 500;
+}
+
+nav .drop-btn span {
+     float: right;
+     line-height: 50px;
+     font-size: 28px;
+     cursor: pointer;
+}
+
+nav .wrapper {
+position: absolute;
+top: 65px;
+display: flex;
+width: 400px;
+overflow: hidden;
+background-color: var(--dark);
+border-radius: 5px;
+transition: all 0.5s ease;
+display: none;
+}
+nav .wrapper.show {
+     display: block;
+     display: flex;
+}
+nav .wrapper .setting-drop, nav .wrapper .help-drop {
+display: none;
+}
+nav .wrapper ul {
+     transition: all 0.5s ease;
+     list-style: none;
+     width: 400px;
+     padding: 10px;
+}
+nav .wrapper ul li{
+     line-height: 55px;
+}
+nav .wrapper ul li a {
+     position: relative;
+     text-decoration: none;
+     color: #b0b3b8;
+     display: flex;
+     font-size: 18px;
+     font-weight: 500;
+     padding: 0 10px;
+     align-items: center;
+     border-radius: 8px;
+}
+nav .wrapper ul li:hover a {
+     background: var(--light);
+}
+
+
+
+.wrapper ul li a .icon{
+     height: 40px;
+     width: 40px;
+     margin-right: 13px;
+     background: #ffffff1a;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     border-radius: 50%;
+}
+
+.wrapper ul li a i {
+     position: absolute;
+     right: 10px;
+     font-size: 25px;
+     pointer-events: none;
+}
+
+.wrapper ul .arrow{
+     padding-left: 10px;
+     font-size: 20px;
+     color: #b0b3b8;
+     cursor: pointer;
+}
+.wrapper ul .arrow span {
+     margin-right: 15px;
+}
+.mobile-items {
+     display: none;
+}
+
+
+@media screen and (max-width: 995px){
+      .navbranding {
+           display: none;
+      }
+
+      .navbar {
+          display: flex;
+          justify-content: center;
+     }
+     
+     nav {
+          margin-left: 00px;
+     }
+
+     nav .wrapper ul {
+          width: 350px;
+     }
+
+     nav .wrapper {
+          width: 350px;
+     }
+
+     nav .drop-btn {
+          width: 350px;
+     }
+
+     .setting-item, .help-item {
+          display: none;
+     }
+
+     .mobile-items {
+          display: inline;
+     }
+}

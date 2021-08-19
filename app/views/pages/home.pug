@@ -1,0 +1,153 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  script(src='https://kit.fontawesome.com/6673ce01c2.js' crossorigin='anonymous')
+  link(rel='stylesheet' href='/css/home.css')
+  title Lunni | Home
+.navbar
+  .navbranding
+    h1 Lunni
+
+    
+
+  if user 
+     div 
+     nav
+      dir.drop-btn
+        | #{user.username} 
+        span.fas.fa-caret-down
+      .wrapper
+        ul.menu-bar
+          li
+            a(href='/')
+              .icon
+                span.fas.fa-home
+              |                                    Home
+          li.setting-item
+            a(href='#')
+              .icon
+                span.fas.fa-cog
+              |                                    Settings 
+              i.fas.fa-angle-right
+          li.help-item
+            a(href='#')
+              .icon
+                span.fas.fa-question-circle
+              |                                    Help &amp; Support 
+              i.fas.fa-angle-right
+          li
+            a(href='/about')
+              .icon
+                span.fas.fa-question-circle
+              |                                    About
+          li.mobile-items
+            a(href='/me')
+              .icon
+                span.fas.fa-user
+              |                                    Profile
+          li.mobile-items
+            a(href='/me/servers')
+              .icon
+                span.fas.fa-server
+              |                                    Servers    
+          li.mobile-items
+            a(href='/documentaion')
+              .icon
+                span.fas.fa-book
+              |                                    Documentaion
+          li.mobile-items
+            a(href='/server')
+              .icon
+                span.fas.fa-bookmark
+              |                                    Support Server
+          li.mobile-items
+            a(href='/policy')
+              .icon
+                span.fas.fa-book-reader
+              |                                    Policy
+          li.mobile-items
+            a(href='/logout')
+              .icon
+                span.fas.fa-sign-out-alt
+              |                                    Logout
+        // Settings Menu Items
+        ul.setting-drop
+          li.arrow.back-setting-btn
+            span.fas.fa-arrow-left
+            | Settings
+          li
+            a(href='/me')
+              .icon
+                span.fas.fa-user
+              |                                    Profile
+          li
+            a(href='/me/servers')
+              .icon
+                span.fas.fa-server
+              |                                    Servers
+          li
+            a(href='/logout')
+              .icon
+                span.fas.fa-sign-out-alt
+              |                                    Log out
+        // Help Drop
+        ul.help-drop
+          li.arrow.back-help-btn
+            span.fas.fa-arrow-left
+            | Help &amp; Support
+          li
+            a(href='/documention')
+              .icon
+                span.fas.fa-bookmark
+              |                                    Documentaion
+          li
+            a(href='/server')
+              .icon
+                span.fas.fa-bookmark
+              |                                    Support Server
+          li
+            a(href='/policy')
+              .icon
+                span.fas.fa-book-reader
+              |                                    Policy
+
+     
+     div
+  else 
+   div 
+    a.logout-btn(href='/login') Login     
+script.
+  const drop_btn = document.querySelector(".drop-btn");
+  const menu_wrapper = document.querySelector(".wrapper");
+  const menu_bar = document.querySelector(".menu-bar");
+  const setting_drop = document.querySelector(".setting-drop");
+  const help_drop = document.querySelector(".help-drop");
+  const setting_item = document.querySelector(".setting-item");
+  const help_item = document.querySelector(".help-item");
+  const back_setting_btn = document.querySelector(".back-setting-btn");
+  const back_help_btn = document.querySelector(".back-help-btn");
+  drop_btn.onclick = (() => {
+  menu_wrapper.classList.toggle("show");
+  });
+  setting_item.onclick = (() => {
+  menu_bar.style.marginLeft = "-400px";
+  setTimeout(() => {
+  setting_drop.style.display = "block";
+  }, 100);
+  });
+  help_item.onclick = (() => {
+  menu_bar.style.marginLeft = "-400px";
+  setTimeout(() => {
+  help_drop.style.display = "block";
+  }, 100);
+  });
+  back_setting_btn.onclick = (() => {
+  menu_bar.style.marginLeft = "0px";
+  setting_drop.style.display = "none";
+  });
+  back_help_btn.onclick = (() => {
+  menu_bar.style.marginLeft = "-0px";
+  help_drop.style.display = "none";
+  });
