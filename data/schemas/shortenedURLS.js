@@ -14,7 +14,8 @@ function rId() {
 const schema = new Schema({
      short: { type: String, required: true, default: `${rId()}`},
      full: { type: String, required: true },
-     clicks: {type: Number, required: true, default: 0}
+     clicks: { type: Number, required: true, default: 0 },
+     
 })
 
 module.exports = model("ShortendURLs", schema)

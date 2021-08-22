@@ -1,0 +1,18 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/css/urls.css')
+  title Lunni | Shortened URLs
+.title
+  h1 Shortend URLS
+  a(href='/')  Head Home
+.urlsCards
+ each url in urlList
+   .card
+      h3 URL
+      span #{url.full}
+      h3 Base URL
+      span #{url.short}
+      a(href=url.short) Send me there!!

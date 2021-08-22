@@ -1,9 +1,12 @@
 const router = require('express').Router()
+require('dotenv').config()
 
 
 router.get("/", (req, res) => {
-     res.send("Hello World")
+     res.render("pages/user/home", {user: res.locals.user})
 })
+
+
 
 
 

@@ -21,6 +21,7 @@ body {
 
 .title {
   text-align: center;
+  margin-top: 10px;
 }
 
 .title a {
@@ -28,4 +29,47 @@ body {
   text-decoration: none;
   margin-top: 5px;
 
+}
+
+.urlsCards {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  grid-gap: 10px;
+  justify-content: center;
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+.card {
+  background-color: var(--light);
+  width: 400px;
+  height: 205px;
+  border-radius: 10px;
+  padding: 13px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 100px;
+  max-width: 400px;
+}
+
+.card h3 {
+  font-size: 15px;
+  margin-top: 5px;
+  max-width: 400px;
+}
+
+.card span { 
+  max-width: 300px;
+}
+
+.card a {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: var(--dark);
+  text-align: center;
+  border-radius: 5px;
+  width: 140px;
+  text-decoration: none;
 }

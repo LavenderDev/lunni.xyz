@@ -3,151 +3,92 @@ head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  script(src='https://kit.fontawesome.com/6673ce01c2.js' crossorigin='anonymous')
-  link(rel='stylesheet' href='/css/home.css')
-  title Lunni | Home
-.navbar
-  .navbranding
-    h1 Lunni
+  link(rel='stylesheet' href='css/home.css')
+  link(href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesheet')
+  link(rel='icon' href='svg/Base.svg' type='image/x-icon')
+  script(src='https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js')
+  link(rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css')
+  script(src='https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js')
+  link(href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet')
+  title Lunni
+.navbar(data-aos='fade-up')
+  .navbar-branding
+    h1 Lunni.xyz
+  .navbar-items
+    if user
+      ul
+        li
+          a(href='/') Home
+        li
+          a(href='/dashboard') Dashboard
+        li
+          a(href='/logout') Logout
+    else
+      ul 
+        li 
+          a(href="/") Home 
+        li 
+          a(href="/login") Login
+.hero
+  .ctx
+    .hero-text
+      div(data-aos='fade-up' data-aos-duration='500')
+        h2 Simple, quick and free.
+        p
+          | Configurate, moderate, utilise all of lunni&apos;s features 
+          br
+          |  to help power your discord server to the top of the charts!
+      .stats(data-aos='fade-up' data-aos-duration='5000')
+        div
+          span Guilds
+          p #{bot.guilds.cache.size}
+        div
+          span Users
+          p #{bot.users.cache.size}
+    .hero-img(data-aos='fade-up' data-aos-duration='4000')
+      img(src='svg/Base.svg' alt='' draggable='false')
+  .wave-div
+    svg.waves(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewbox='0 24 150 28' preserveaspectratio='none' shape-rendering='auto')
+      defs
+        path#gentle-wave(d='M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z')
+      g.parallax
+        use(xlink:href='#gentle-wave' x='48' y='0' fill='rgba(24, 29, 35, 1)')
+.filler
+.main
+  h1.features-title(data-aos='fade-up') Features
+  .cards
+    .spliter1
+    .card(data-aos='fade-up')
+      .card-img
+        img(src='svg/eCO.svg' alt='' draggable='false')
+      .card-text
+        h2 Join in on global economy!
+        p
+          | Earn money by talking, working and many other ways! Buy trading cards, badges, tools and much more with the money you earn. Extange your credits to earn more coins, extange your copper to silver and onwards!
+    .spliter
+    .card(data-aos='fade-up')
+      .card-text
+        h2 Secure your enviroment!
+        p
+          | Make sure your server is safe and secure and secure! Mute, timeout, warn, ban and many more features that can be utilized with lunni!
+      .card-img
+        img(src='svg/Mod.svg' alt='' draggable='false')
+    .spliter
+  .footer
+  h2 And much more!
+  p What are you waiting for?
+  .btns
+    a(href='https://discord.com/api/oauth2/authorize?client_id=877913463035424779&permissions=8&redirect_uri=https%3A%2F%2Flunni.xyz%2Fauthorised&scope=bot')
+      .ui.animated.button.green(tabindex='0')
+        .visible.content.white-text Invite Now
+        .hidden.content
+          i.gem.icon.white-text
+    a(href='https://discord.gg/ksWSgnp8cz')
+      .ui.animated.button.violet(tabindex='0' onclick="window.location.replace('')")
+        .visible.content.white-text Support
+        .hidden.content
+          i.question.circle.outline.icon.white-text
 
-    
-
-  if user 
-     div 
-     nav
-      dir.drop-btn
-        | #{user.username} 
-        span.fas.fa-caret-down
-      .wrapper
-        ul.menu-bar
-          li
-            a(href='/')
-              .icon
-                span.fas.fa-home
-              |                                    Home
-          li.setting-item
-            a(href='#')
-              .icon
-                span.fas.fa-cog
-              |                                    Settings 
-              i.fas.fa-angle-right
-          li.help-item
-            a(href='#')
-              .icon
-                span.fas.fa-question-circle
-              |                                    Help &amp; Support 
-              i.fas.fa-angle-right
-          li
-            a(href='/about')
-              .icon
-                span.fas.fa-question-circle
-              |                                    About
-          li.mobile-items
-            a(href='/me')
-              .icon
-                span.fas.fa-user
-              |                                    Profile
-          li.mobile-items
-            a(href='/me/servers')
-              .icon
-                span.fas.fa-server
-              |                                    Servers    
-          li.mobile-items
-            a(href='/documentaion')
-              .icon
-                span.fas.fa-book
-              |                                    Documentaion
-          li.mobile-items
-            a(href='/server')
-              .icon
-                span.fas.fa-bookmark
-              |                                    Support Server
-          li.mobile-items
-            a(href='/policy')
-              .icon
-                span.fas.fa-book-reader
-              |                                    Policy
-          li.mobile-items
-            a(href='/logout')
-              .icon
-                span.fas.fa-sign-out-alt
-              |                                    Logout
-        // Settings Menu Items
-        ul.setting-drop
-          li.arrow.back-setting-btn
-            span.fas.fa-arrow-left
-            | Settings
-          li
-            a(href='/me')
-              .icon
-                span.fas.fa-user
-              |                                    Profile
-          li
-            a(href='/me/servers')
-              .icon
-                span.fas.fa-server
-              |                                    Servers
-          li
-            a(href='/logout')
-              .icon
-                span.fas.fa-sign-out-alt
-              |                                    Log out
-        // Help Drop
-        ul.help-drop
-          li.arrow.back-help-btn
-            span.fas.fa-arrow-left
-            | Help &amp; Support
-          li
-            a(href='/documention')
-              .icon
-                span.fas.fa-bookmark
-              |                                    Documentaion
-          li
-            a(href='/server')
-              .icon
-                span.fas.fa-bookmark
-              |                                    Support Server
-          li
-            a(href='/policy')
-              .icon
-                span.fas.fa-book-reader
-              |                                    Policy
-
-     
-     div
-  else 
-   div 
-    a.logout-btn(href='/login') Login     
+script(src='https://unpkg.com/aos@2.3.1/dist/aos.js')
 script.
-  const drop_btn = document.querySelector(".drop-btn");
-  const menu_wrapper = document.querySelector(".wrapper");
-  const menu_bar = document.querySelector(".menu-bar");
-  const setting_drop = document.querySelector(".setting-drop");
-  const help_drop = document.querySelector(".help-drop");
-  const setting_item = document.querySelector(".setting-item");
-  const help_item = document.querySelector(".help-item");
-  const back_setting_btn = document.querySelector(".back-setting-btn");
-  const back_help_btn = document.querySelector(".back-help-btn");
-  drop_btn.onclick = (() => {
-  menu_wrapper.classList.toggle("show");
-  });
-  setting_item.onclick = (() => {
-  menu_bar.style.marginLeft = "-400px";
-  setTimeout(() => {
-  setting_drop.style.display = "block";
-  }, 100);
-  });
-  help_item.onclick = (() => {
-  menu_bar.style.marginLeft = "-400px";
-  setTimeout(() => {
-  help_drop.style.display = "block";
-  }, 100);
-  });
-  back_setting_btn.onclick = (() => {
-  menu_bar.style.marginLeft = "0px";
-  setting_drop.style.display = "none";
-  });
-  back_help_btn.onclick = (() => {
-  menu_bar.style.marginLeft = "-0px";
-  help_drop.style.display = "none";
-  });
+  AOS.init();

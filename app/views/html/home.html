@@ -4,161 +4,123 @@
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <script src="https://kit.fontawesome.com/6673ce01c2.js" crossorigin="anonymous"></script>
      <link rel="stylesheet" href="../../assets/css/home.css">
-     <title>Lunni | Home</title>
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <link rel="icon" href="../../assets/svg/Base.svg" type="image/x-icon">
+     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+     <title>Lunni</title>
 </head>
 <body>
-     
-     <div class="navbar">
-          
-          <div class="navbranding">
-               <h1>Lunni</h1>
+
+     <div class="navbar" data-aos="fade-up">
+          <div class="navbar-branding">
+               <h1>Lunni.xyz</h1>
           </div>
-          <div>
-               <nav style="margin-left: 100px;">
-                    <dir class="drop-btn">
-                                 #{user.username} <span class="fas fa-caret-down"></span>
-                             </dir>
-                             <div class="wrapper">
-                                  <ul class="menu-bar">
-                                       <li><a href="/">
-                                            <div class="icon"><span class="fas fa-home"></span></div>
-                                            Home
-                                       </a></li>
-                                       <li class="setting-item"><a href="#">
-                                            <div class="icon"><span class="fas fa-cog"></span></div>
-                                            Settings <i class="fas fa-angle-right"></i>
-                                       </a></li>
-                                       <li class="help-item"><a href="#">
-                                            <div class="icon"><span class="fas fa-question-circle"></span></div>
-                                            Help & Support <i class="fas fa-angle-right"></i>
-                                       </a></li>
-                                       <li><a href="/about">
-                                            <div class="icon"><span class="fas fa-question-circle"></span></div>
-                                            About
-                                       </a></li>
-                                       <li class="mobile-items"><a href="/me">
-                                        <div class="icon"><span class="fas fa-user"></span></div>
-                                        Profile
-                                        </a></li>
-                                        <li class="mobile-items"><a href="/me/servers">
-                                        <div class="icon"><span class="fas fa-server"></span></div>
-                                        Servers
-                                        </a></li>
-                                        <li class="mobile-items"><a href="/documentaion">
-                                        <div class="icon"><span class="fas fa-book"></span></div>
-                                        Documentaion
-                                        </a></li>
-                                        <li class="mobile-items"><a href="/server">
-                                        <div class="icon"><span class="fas fa-bookmark"></span></div>
-                                        Support Server
-                                        </a></li>
-                                        <li class="mobile-items"><a href="/policy">
-                                        <div class="icon"><span class="fas fa-book-reader"></span></div>
-                                        Policy
-                                        </a></li>
-                                        <li class="mobile-items"><a href="/logout">
-                                        <div class="icon"><span class="fas fa-sign-out-alt"></span></div>
-                                        Logout
-                                        </a></li>
-                                  </ul>
-                   
-                                  <!-- Settings Menu Items-->
-                   
-                                  <ul class="setting-drop">
-                                       <li class="arrow back-setting-btn"><span class="fas fa-arrow-left"></span>Settings</li>
-                                       <li><a href="/me">
-                                            <div class="icon"><span class="fas fa-user"></span></div>
-                                            Profile
-                                       </a></li>
-                                       <li><a href="/me/servers">
-                                            <div class="icon"><span class="fas fa-server"></span></div>
-                                            Servers
-                                       </a></li>
-                   
-                                       <li><a href="/logout">
-                                            <div class="icon"><span class="fas fa-sign-out-alt"></span></div>
-                                            Log out
-                                       </a></li>
-                                  </ul>
-                   
-                                  <!-- Help Drop -->
-                   
-                                  <ul class="help-drop">
-                                       <li class="arrow back-help-btn"><span class="fas fa-arrow-left"></span>Help & Support</li>
-                                       <li><a href="/documention">
-                                            <div class="icon"><span class="fas fa-bookmark"></span></div>
-                                            Documentaion
-                                       </a></li>
-                                       <li><a href="/server">
-                                            <div class="icon"><span class="fas fa-bookmark"></span></div>
-                                            Support Server
-                                       </a></li>
-                                       <li><a href="/policy">
-                                            <div class="icon"><span class="fas fa-book-reader"></span></div>
-                                            Policy
-                                       </a></li>
-                                  </ul>
-                             </div>
-                        </nav>
+          <div class="navbar-items">
+          <!--if user-->
+               <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/logout">Logout</a></li>
+               </ul>
+          <!--else-->  
           </div>
-          <div>
+     </div>
+     <div class="hero">
+          <div class="ctx">
+          <div class="hero-text" >
+               <div data-aos="fade-up" data-aos-duration="500">
+                    <h2>Simple, quick and free.</h2>
+               <p>Configurate, moderate, utilise all of lunni's features <br> to help power your discord server to the top of the charts!</p>
+               </div>
+               <div class="stats"data-aos="fade-up" data-aos-duration="5000">
+                    <div>
+                         <span>Guilds</span>
+                         <p>69</p>
+                    </div>
+                    <div>
+                         <span>Users</span>
+                         <p>420</p>
+                    </div>
+               </div>
+          </div>
+          <div class="hero-img" data-aos="fade-up" data-aos-duration="4000">
+               <img src="../../assets/svg/Base.svg" alt="" draggable="false">
+          </div>
+     </div>
+     <div class="wave-div">
+          <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+          <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+          </defs>
+          <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(24, 29, 35, 1)" />
+          </g>
+          </svg> 
+     </div>
+     </div>
+     <div class="filler"></div>
+     <div class="main">
+          <h1 class="features-title" data-aos="fade-up">Features</h1>
+          <div class="cards">
+               <div class="spliter1"></div>
+               <div class="card" data-aos="fade-up">
+                    <div class="card-img">
+                         <img src="../../assets/svg/eCO.svg" alt="" draggable="false">
+                    </div>
+                    <div class="card-text">
+                         <h2>Join in on global economy!</h2>
+                         <p>Earn money by talking, working and many other ways! Buy trading cards, badges, tools and much more with the money you earn. Extange your credits to earn more coins, extange your copper to silver and onwards!</p>
+                    </div>
+               </div>
+               <div class="spliter"></div>
+               <div class="card" data-aos="fade-up">
+                    <div class="card-text">
+                         <h2>Secure your enviroment!</h2>
+                         <p>Make sure your server is safe and secure and secure! Mute, timeout, warn, ban and many more features that can be utilized with lunni!</p>
+                    </div>
+                    <div class="card-img">
+                         <img src="../../assets/svg/Mod.svg" alt="" draggable="false">
+                    </div>
+               </div>
+               <div class="spliter"></div>
+               
+          </div>
           
-     
-</div>
-</div>
-
-     <script>
-          const drop_btn = document.querySelector(".drop-btn");
-          const menu_wrapper = document.querySelector(".wrapper");
-          const menu_bar = document.querySelector(".menu-bar");
-
-          const setting_drop = document.querySelector(".setting-drop");
-          const help_drop = document.querySelector(".help-drop");
-          const setting_item = document.querySelector(".setting-item");
-          const help_item = document.querySelector(".help-item");
-          const back_setting_btn = document.querySelector(".back-setting-btn");
-          const back_help_btn = document.querySelector(".back-help-btn");
-
-          drop_btn.onclick = (() => {
-               menu_wrapper.classList.toggle("show");
-          });
-
-          setting_item.onclick = (() => {
-               menu_bar.style.marginLeft = "-400px";
-               setTimeout(() => {
-                    setting_drop.style.display = "block";
-               }, 100);
-          });
-
-          help_item.onclick = (() => {
-               menu_bar.style.marginLeft = "-400px";
-               setTimeout(() => {
-                    help_drop.style.display = "block";
-               }, 100);
-          });
-
-          back_setting_btn.onclick = (() => {
-               menu_bar.style.marginLeft = "0px";
-               setting_drop.style.display = "none";
-          });
-
-          back_help_btn.onclick = (() => {
-               menu_bar.style.marginLeft = "-0px";
-               help_drop.style.display = "none";
-          });
-
-
-          /* 
-
-          .mobile-items
-
-           <a href="/login" class="logout-btn">Login</a>
+     <div class="footer">
+          <h2>And much more!</h2>
+          <p>What are you waiting for?</p>
+          <div class="btns">
+               <a href="https://discord.com/api/oauth2/authorize?client_id=877913463035424779&permissions=8&redirect_uri=https%3A%2F%2Flunni.xyz%2Fauthorised&scope=bot">
+               <div class="ui animated button green" tabindex="0">
+                    <div class="visible content white-text">Invite Now</div>
+                    <div class="hidden content">
+                         <i class="gem icon white-text"></i>
+                    </div>
+                  </div>
+               </a>
+               <a href="https://discord.gg/ksWSgnp8cz">
+                  <div class="ui animated button violet" tabindex="0" onclick="window.location.replace('')">
+                    <div class="visible content white-text">Support</div>
+                    <div class="hidden content">
+                         <i class="question circle outline icon white-text"></i>
+                    </div>
+                  </div>
+               </a>
+          </div>
+          
+     </div> 
+     </div>
 
      
-          */
-
-     </script>
 </body>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+     AOS.init();
+</script>
 </html>

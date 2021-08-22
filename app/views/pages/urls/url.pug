@@ -5,7 +5,8 @@ head
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet', href='/css/url.css')
   title Lunni | URL shortener
-h1  Url Shortener
+h1  #{name}
+a(href="/") Head Home 
 form(action='/shortUrls', method='POST')
   label(for='fullUrl')
   input#fullUrl(type='url', placeholder='URL', name='fullUrl')
