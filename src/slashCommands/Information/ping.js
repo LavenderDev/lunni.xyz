@@ -3,6 +3,7 @@ const { Client, CommandInteraction } = require("discord.js");
 module.exports = {
     name: "ping",
     description: "returns websocket ping",
+    category: `Information`,
     type: 'CHAT_INPUT',
     /**
      *
@@ -11,6 +12,6 @@ module.exports = {
      * @param {String[]} args
      */
     run: async (client, interaction, args) => {
-        interaction.followUp({ content: `${client.ws.ping}ms!` });
+        interaction.reply({ content: `${client.ws.ping}ms!` });
     },
 };

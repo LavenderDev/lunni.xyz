@@ -9,8 +9,8 @@ head
   link(rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css')
   script(src='https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js')
   link(href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet')
-  link(rel='stylesheet' href='css/user.css')
-  title Lunni | Dashboard
+  link(rel='stylesheet' href='/css/server.css')
+  title Lunni | Panel
 .navbar
   .navbar-branding
     h1 Lunni.xyz
@@ -22,14 +22,17 @@ head
         a(href='/server') Support
       li
         a(href='/logout') Logout
-.serverlist
-     for guild in guilds
-          a(href='/panel/server/' + guild.id)
-               .server
-                    .server-icon
-                         if guild.icon
-                              img(src=guild.iconURL({size: 64}) alt="#{guild.name}'s Icon" draggable='false')
-                         else
-                              img(src='https://cdn.discordapp.com/attachments/878591010379272202/879822042579468328/0.png' alt='#{guild.name} has no icon' draggable='false')
-                    .server-text
-                         p #{guild.name}
+form(action='/panel/server/' + guild.id +'/general?_method=PUT' method='POST')
+  .row
+    .info
+     if guild.icon
+          img(src=guild.iconURL({size: 64}) alt='' draggable='false')
+          p #{guild.name}
+     else
+          img(src='https://cdn.discordapp.com/attachments/878591010379272202/879822042579468328/0.png' alt='' draggable='false')
+          p #{guild.name}
+    .col
+      label(for='') Name
+      input(type='text' value=nickName name='username')
+      button(type='submit') Summit
+    p.graied More coming soon!

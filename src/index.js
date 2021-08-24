@@ -10,5 +10,6 @@ module.exports = client;
 require(`./handlers/index`)(client)
 client.commands = new Collection()
 client.slashCommands = new Collection()
-client.color = "2A282D"
+client.color = "181D23"
+client.config = require(`./config.json`)
 client.login(process.env.token)

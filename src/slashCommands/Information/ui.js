@@ -22,11 +22,11 @@ module.exports = {
                     { name: `Mention & ID`, value: `<@${member.id}> | \`${member.id}\`` },
                     { name: `Joined Server`, value: `${member.joinedAt.toLocaleString()}`, inline: true},
                     { name: `Account Created`, value: `${member.user.createdAt.toLocaleString()}`, inline: true },
-                    { name: `User Data`, value: `**Beta:** ${userData.beta}\n**Staff:** ${userData.staff}`},
+                    { name: `User Data`, value: `**Beta User:** ${userData.beta}\n**Lunni Staff:** ${userData.staff}`},
                     { name: `Roles`, value: member.roles.cache ? member.roles.cache.map((r) => `${r}`).join(", ") : "" },
                     
                )
  
-          interaction.followUp({embeds: [embed]})
+               interaction.reply({embeds: [embed]})
    }
 }

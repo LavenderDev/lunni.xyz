@@ -58,6 +58,6 @@ module.exports = {
                     
                )
 
-          interaction.followUp({embeds: [embed]})
+               interaction.reply({embeds: [embed]})
    }
 }

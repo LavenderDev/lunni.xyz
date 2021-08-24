@@ -18,13 +18,13 @@ module.exports = {
           let value = args[1] || false
           if (value === false) {
                if (userData.beta === false) {
-                    return interaction.followUp({content: `${member} is not a beta user`})
+                    return interaction.reply({content: `${member} is not a beta user`})
                } else {
                     await user.findOneAndUpdate({userId: member.id}, {beta: false})
                }
           } else {
                if (userData.beta === true) {
-                    return interaction.followUp({content: `${member} is already a beta user`})
+                    return interaction.reply({content: `${member} is already a beta user`})
                } else {
                     await user.findOneAndUpdate({userId: member.id}, {beta: true})
                }
@@ -40,7 +40,7 @@ module.exports = {
                msg += `Removed ${member}'s beta access`
                member.roles.remove(`878594000486031370`).catch(() => {})
           }
-          interaction.followUp({ content: `${msg}` })
+          interaction.reply({ content: `${msg}` })
           
 
 
