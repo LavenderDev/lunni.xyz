@@ -3420,7 +3420,7 @@ module.exports = {
      * @param {String[]} args
      */
      run: async (client, interaction, args) => {
-          interaction.reply({content: `${rightThere[Math.floor(Math.random() * rightThere.length)]}`})
+          interaction.reply({content: `${rightThere[Math.floor(Math.random() * rightThere.length)]}`}).catch(() => {})
 
 
    }

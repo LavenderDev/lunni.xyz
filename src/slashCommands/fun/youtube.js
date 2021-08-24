@@ -14,10 +14,10 @@ module.exports = {
      * @param {String[]} args
      */
      run: async (client, interaction, args) => {
-          if (!args[0]) return interaction.reply({ content: `Please supply a search query` })
-          const msg = await interaction.reply({content: `Searching...`})
+          if (!args[0]) return interaction.reply({ content: `Please supply a search query` }).catch(() => {})
+          const msg = await interaction.reply({content: `Searching...`}).catch(() => {})
           const video = (await yt(args[0])).videos[0]
-          if(!video) return interaction.reply({content: `No searches found!`})
+          if(!video) return interaction.reply({content: `No searches found!`}).catch(() => {})
           const { title, url, image, thumbnail, seconds, timestamp, ago, views } = video
           let description = video.description
           if (description.length >= 1024) {
@@ -35,7 +35,7 @@ module.exports = {
                .setColor(client.color)
                .setThumbnail(thumbnail)
           
-          interaction.editReply({embeds: [embed], content: `Searched`})
+          interaction.editReply({embeds: [embed], content: `Searched`}).catch(() => {})
 
 
 

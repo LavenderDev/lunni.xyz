@@ -22,7 +22,7 @@ module.exports = {
         .setFooter(`Requested by ${interaction.user.tag}`, interaction.user.displayAvatarURL({dynamic: true, format: "png"}))
          .setColor(client.color)
        
-         interaction.reply({embeds: [embed]})
+         interaction.reply({embeds: [embed]}).catch(() => {})
 
    }
 }

@@ -22,7 +22,7 @@ module.exports = {
                .setDescription(`8${"=".repeat(length)}D`)
                .setColor(client.color)
           
-          interaction.reply({embeds: [embed]})
+          interaction.reply({embeds: [embed]}).catch(() => {})
 
    }
 }

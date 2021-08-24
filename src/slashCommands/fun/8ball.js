@@ -17,11 +17,11 @@ module.exports = {
      */
      run: async (client, interaction, args) => {
           if (!args[0]) {
-          return interaction.reply({content: `Please supply a question smh`})
+          return interaction.reply({content: `Please supply a question smh`}).catch(() => {})
           }
 
           const res = response[Math.floor(Math.random() * response.length)]
-          interaction.reply({content: `${res}`})
+          interaction.reply({content: `${res}`}).catch(() => {})
 
 
    }

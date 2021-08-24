@@ -21,7 +21,7 @@ module.exports = {
                .setDescription(`${member} is ${res}% epic gamer`)
                .setColor("GREEN")
           
-          interaction.reply({embeds: [embed]})
+          interaction.reply({embeds: [embed]}).catch(() => {})
 
    }
 }

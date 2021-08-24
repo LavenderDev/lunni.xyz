@@ -21,7 +21,7 @@ module.exports = {
           )
                .setColor(client.color)
           
-          interaction.reply({embeds: [embed]})
+          interaction.reply({embeds: [embed]}).catch(() => {})
 
 
    }

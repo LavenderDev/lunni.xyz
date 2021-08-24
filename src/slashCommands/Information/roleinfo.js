@@ -20,7 +20,7 @@ module.exports = {
                     .setAuthor(`Error`)
                     .setDescription(`Please supply a role!`)
                .setColor("RED")
-               return interaction.reply({embeds: [noValue]})
+               return interaction.reply({embeds: [noValue]}).catch(() => {})
           }
           /* let perms = []
           if (role.permissions.toArray().length >= 1) {
@@ -42,7 +42,7 @@ module.exports = {
           .setColor(role.hexColor)
                .setImage(`https://singlecolorimage.com/get/${role.hexColor}/400x400`)
           
-               interaction.reply({embeds: [embed]})
+               interaction.reply({embeds: [embed]}).catch(() => {})
 
    }
 }

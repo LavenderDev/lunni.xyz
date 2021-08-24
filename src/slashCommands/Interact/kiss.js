@@ -14,7 +14,7 @@ module.exports = {
      * @param {String[]} args
      */
      run: async (client, interaction, args) => {
-          if (!args[0]) return interaction.reply({ content: `Please mention a member you wish to kiss 😳` })
+          if (!args[0]) return interaction.reply({ content: `Please mention a member you wish to kiss 😳` }).catch(() => {})
           const member = interaction.guild.members.cache.find(m => m.id === args[0])
           fetch("https://lunni.xyz/api/gif/kiss")
                .then((res) => res.json())
@@ -25,7 +25,7 @@ module.exports = {
                          .setAuthor(`${interaction.member.user.username} is kissing ${member.user.username} 😳`)
                          .setImage(img)
                          .setColor(client.color)
-                    interaction.reply({embeds: [embed]})
+                    interaction.reply({embeds: [embed]}).catch(() => {})
           })
 
    }

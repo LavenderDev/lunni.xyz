@@ -11,9 +11,7 @@ let permNums = {
     ADMINSTRATOR: 4
 }
 client.on("interactionCreate", async (interaction) => {
-    if (!interaction.guild.me.permissions.has("EMBED_LINKS") ||
-        interaction.guild.me.permissions.has("SEND_MESSAGES") ||
-        interaction.guild.me.permissions.has("USE_EXTERNAL_EMOJIS")) {return interaction.channel.send({ content: `Im missing one my required permissions: "Embed Links" "Send Messages" "Use External Emojis"` }).catch(() => { })}
+    
 
      if (interaction.isCommand()) {
          
@@ -34,19 +32,21 @@ client.on("interactionCreate", async (interaction) => {
          interaction.member = interaction.guild.members.cache.get(interaction.user.id);
          if (cmd.owner) {
              if (!owners.includes(interaction.user.id)) {
-                 return interaction.reply({content: `This command is developer / owner only!`})
+                 return interaction.reply({content: `This command is developer / owner only!`}).catch(() => {})
              }
          }
-         if (cmd.permissions.length) {
-             let invaldPerms = []
-             for (const perm of cmd.permissions) {
-                 if (!interaction.member.permissions.has(perm)) {
-                     invaldPerms.push(perm)
+         if (cmd.permissions) {
+             if (cmd.permissions.length) {
+                 let invaldPerms = []
+                 for (const perm of cmd.permissions) {
+                     if (!interaction.member.permissions.has(perm)) {
+                         invaldPerms.push(perm)
+                     }
+                 }
+                 if (invaldPerms.length) {
+                     return interaction.reply({ content: `You are missing the required permissions! ${invaldPerms.join(", ")} (Level: ${permNums[invalidPerms]})` }).catch(() => { })
                  }
              }
-             if(invaldPerms.length) {
-                return interaction.reply({content: `You are missing the required permissions! ${invaldPerms.join(", ")} (Level: ${permNums[invalidPerms]})`})
-            }
          }
          const userData = await users.findOne({ userId: interaction.user.id })
          if (!userData) { await users.create({ userId: interaction.user.id }) }

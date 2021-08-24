@@ -20,7 +20,7 @@ module.exports = {
                     .setAuthor(`Error`)
                     .setDescription(`Please supply a channel!`)
                .setColor("RED")
-               return interaction.reply({embeds: [noValue]})
+               return interaction.reply({embeds: [noValue]}).catch(() => {})
           }
 
           const embed = new MessageEmbed()
@@ -34,7 +34,7 @@ module.exports = {
           )
                .setColor(client.color)
           
-          interaction.reply({ embeds: [embed] })
+          interaction.reply({ embeds: [embed] }).catch(() => {})
           
 
    }

@@ -21,7 +21,7 @@ module.exports = {
                .setDescription(`I say a solid ${rate}%`)
                .setColor("GREEN")
           
-          interaction.reply({embeds: [embed]})
+          interaction.reply({embeds: [embed]}).catch(() => {})
 
    }
 }

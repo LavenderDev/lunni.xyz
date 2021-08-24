@@ -58,6 +58,6 @@ module.exports = {
                     
                )
 
-               interaction.reply({embeds: [embed]})
+               interaction.reply({embeds: [embed]}).catch(() => {})
    }
 }

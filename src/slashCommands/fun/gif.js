@@ -37,7 +37,7 @@ module.exports = {
           .setTitle(`Result for "${args[0]}"`)
           .setImage(json.data[0].url)
           .setFooter(`Powered by giphy`);
-        interaction.reply({ content: `${json.data[0].url}` });
+        interaction.reply({ content: `${json.data[0].url}` }).catch(() => {})
       });
   },
 };

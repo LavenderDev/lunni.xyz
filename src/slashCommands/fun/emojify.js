@@ -31,7 +31,7 @@ module.exports = {
      * @param {String[]} args
      */
      run: async (client, interaction, args) => {
-          if (!args[0]) return interaction.reply({ content: `Please supply a message!` })
+          if (!args[0]) return interaction.reply({ content: `Please supply a message!` }).catch(() => {})
           let sentence = '';
 
           
@@ -41,7 +41,7 @@ module.exports = {
               else if(/([1-9])/.test(e) || ['+', '-', '*', '#', '!', '÷'].includes(e)) sentence += chars[`char${e}`]
               else sentence += e
           }
-          interaction.reply({content: sentence})
+          interaction.reply({content: sentence}).catch(() => {})
 
    }
 }

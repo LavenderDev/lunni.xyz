@@ -35,11 +35,14 @@ module.exports = async (client) => {
           arrayOfSlashCommands.push(file);
       });
      
-      client.on("ready", async () => {
-          await client.guilds.cache
+    client.on("ready", async () => {
+          
+        await client.application.commands.set(arrayOfSlashCommands);
+        
+          /* await client.guilds.cache
               .get("878544541391654942")
               .commands.set(arrayOfSlashCommands);
-  
+              */
           // await client.application.commands.set(arrayOfSlashCommands);
       });
 }

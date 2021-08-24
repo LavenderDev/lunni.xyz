@@ -16,7 +16,7 @@ module.exports = {
      run: async (client, interaction, args) => {
           if(!args[0]) return interaction.reply({content: `Please supply a message!`})
           const msg = args[0].split('').reverse().join("")
-          interaction.reply({content: msg})
+          interaction.reply({content: msg}).catch(() => {})
 
 
    }

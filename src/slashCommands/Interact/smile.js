@@ -22,7 +22,7 @@ module.exports = {
                     .setAuthor(`${interaction.member.user.username} is smiling! 😃`)
                     .setImage(img)
                     .setColor(client.color)
-               interaction.reply({embeds: [embed]})
+               interaction.reply({embeds: [embed]}).catch(() => {})
      })
 
 
