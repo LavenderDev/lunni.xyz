@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <link rel="icon" href="../../assets/svg/Base.svg" type="image/x-icon">
+     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
+     <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+     <link rel="stylesheet" href="../../assets/css/report.css">
+     <title>Lunni | Report</title>
+</head>
+<body>
+     <div class="navbar">
+          <div class="navbar-branding">
+               <h1>Lunni.xyz</h1>
+          </div>
+          <div class="navbar-items">
+               <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/server">Support</a></li>
+                    <li><a href="/logout">Logout</a></li>
+               </ul>
+          </div>
+     </div>
+     <form action="/bugreport/send?_method=PUT" method="POST">
+          <div class="main">
+               
+               <label for="">Bug Report</label>
+               <textarea type="text" placeholder="Enter your report here..."  name="report"> </textarea>
+               <button type="submit">Summit</button>
+          </div>
+     </form>
+</body>
+</html>

@@ -17,7 +17,7 @@ module.exports = {
                .setAuthor(`Coming Soon`)
                .setDescription(`Since the bot is not finshed, here is a list of what to expect soon!`)
                .addFields(
-               { name: "Soon", value: `\`\`\`\nSuggestions System\nAuto Moderation ( Auto Ban, Auto Warn etc )\nModeration ( Ban, kick, warn, mute, timedmute, unmute and more)\nAuto React System\nServer Stats system\nLevel System`}
+               { name: "Soon", value: `\`\`\`\nSuggestions System\nAuto Moderation ( Auto Ban, Auto Warn etc )\nModeration ( Ban, kick, warn, mute, timedmute, unmute and more)\nAuto React System\nServer Stats system\nLevel System\`\`\``}
           )
                .setColor(client.color)
           

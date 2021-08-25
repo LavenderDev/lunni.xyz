@@ -35,19 +35,7 @@ client.on("interactionCreate", async (interaction) => {
                  return interaction.reply({content: `This command is developer / owner only!`}).catch(() => {})
              }
          }
-         if (cmd.permissions) {
-             if (cmd.permissions.length) {
-                 let invaldPerms = []
-                 for (const perm of cmd.permissions) {
-                     if (!interaction.member.permissions.has(perm)) {
-                         invaldPerms.push(perm)
-                     }
-                 }
-                 if (invaldPerms.length) {
-                     return interaction.reply({ content: `You are missing the required permissions! ${invaldPerms.join(", ")} (Level: ${permNums[invalidPerms]})` }).catch(() => { })
-                 }
-             }
-         }
+         if(!interaction.member.permissions.has(cmd.permissions || [])) return interaction.reply({content: `You do not have the permissions to use this command!`})
          const userData = await users.findOne({ userId: interaction.user.id })
          if (!userData) { await users.create({ userId: interaction.user.id }) }
          const guildConfiguration = await guildData.findOne({ guildId: interaction.guild.id })

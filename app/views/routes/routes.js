@@ -12,6 +12,7 @@ router.get("/", (req, res) => {
 })
 
 
+
 // Auth Routes
 
 router.get("/login", (req, res) => {

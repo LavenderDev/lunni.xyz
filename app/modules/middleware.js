@@ -21,15 +21,11 @@ module.exports.validateUser = async (req, res, next) => {
 };
 
 module.exports.betaUser = async (req, res, next) => {
-  const userData = await user.findOne({ userId: res.locals.user.id })
-  if (!userData) {
-    return res.render("errors/cantAccess")
+  const userData = await user.findOne({ userId: res.locals.user.id, beta: true })
+  if (userData) {
+    next()
   } else {
-    if (userData.beta === true) {
-      next()
-    } else {
       return res.render("errors/cantAccess")
-    }
   }
 }
 
@@ -47,16 +43,37 @@ module.exports.updateGuilds = async (req, res, next) => {
 };
 
 module.exports.getUserGuilds = async (req, res, next) => {
-  bot.guilds.cache.forEach((g) => {
-    let totalUserGuilds = []
-    if (g.members.cache.get(res.locals.user.id).permissions.has("ADMINISTRATOR")) {
-      totalUserGuilds.push(g)
-    }
-    res.locals.meGuilds = totalUserGuilds
-  })
-  next()
+  try {
+    bot.guilds.cache.forEach((g) => {
+      let totalUserGuilds = []
+      const member = g.members.cache.find(m => m.id === res.locals.user.id)
+      if (member) {
+        if (g.members.cache.get(res.locals.user.id).permissions.has("ADMINISTRATOR")) {
+          totalUserGuilds.push(g)
+        }
+      }
+
+      res.locals.meGuilds = totalUserGuilds
+    })
+    next()
+  } catch (err) {
+    res.render("errors/404")
+  }
 }
 
+
+module.exports.validateUserPerms = async (req, res, next) => {
+  const guild = bot.guilds.cache.get(req.params.id)
+  if (guild) {
+    if (guild.members.cache.get(res.locals.user.id).permissions.has("ADMINISTRATOR")) {
+      next()
+    } else {
+      res.render("errors/404")
+    }
+  } else {
+    res.render("errors/404")
+  }
+}
 
 module.exports.validateGuild = async (req, res, next) => {
   res.locals.guild = bot.guilds.cache.find(g => g.id === req.params.id)

@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+     --body:#F5F0F1;
+     --red:#ff2145;
+     --dark-red:#aa1931;
+     --black: #181D23;
+     --dark-black: rgb(22, 21, 21);
+     --shadow: rg  b(165, 165, 165);
+     --green: #54bb32;
+     --dark-green: #439527;
+     --grey: #474747;
+     --input: #32353B;
+}
+
+* {
+     font-family: 'Poppins', sans-serif;
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     color: var(--body);
+}
+
+body {
+     background-color: var(--black);
+}
+
+.navbar {
+     display: flex;
+     justify-content: space-around;
+     padding: 10px;
+}
+
+.navbar a {
+     text-decoration: none;
+     color: var(--body);
+}
+.navbar-branding h1 {
+     color: var(--body);
+     font-size: 26px;
+     font-weight: 600;
+}
+
+.navbar-items ul {
+     display: flex;
+     margin-top: 6px;
+}
+.navbar-items li {
+     margin-left: 40px;
+     list-style-type: none;
+}
+.main {
+     display: flex;
+     flex-direction: column;
+     width: 600px;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: 90px;
+}
+.content {
+     display: flex;
+     justify-content: space-between;
+}
+
+.main label {
+     font-size: 20px;
+     margin-bottom: 10px;
+     margin-top: 10px;
+     margin-right: 20px;
+}
+
+.main button {
+     background-color: var(--green);
+     margin-top: 10px;
+     padding: 10px;
+     border-radius: 5px;
+     border: none;
+     transition: background-color 0.1s linear;
+}
+
+.main button:hover {
+     background-color: var(--dark-green);
+     cursor: pointer;
+}
+
+.main textarea {
+     background-color: var(--grey);
+     border: none;
+     padding: 10px;
+     width: 600px;
+     height: 50px;
+     border-radius: 5px;
+}
